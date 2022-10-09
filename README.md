@@ -1,6 +1,13 @@
 # SMT-Word-Alignment
 
-The python version used is 3.9
+### Requirements :
+```
+   numpy
+   nltk
+```
+### Results :
+
+### Instructions :
 
 There are 3 python programs here (`-h` for usage):
 
