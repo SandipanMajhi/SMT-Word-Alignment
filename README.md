@@ -1,12 +1,31 @@
 # SMT-Word-Alignment
 
+We modified the IBM model 1 by using English and French stemmed words to get consistent word alignment probabilities. We use the same word translation probabilites in Model 2 to have the alignments.
+
 ### Requirements :
 ```
    numpy
    nltk
 ```
 ### Results :
+AER Comparison - 
+```
+Name           Iterations  Precision   Recall      AER
+DICE (100000)              0.315315    0.482249    0.628486
+IBM 1          5           0.499307    0.736686    0.424969
+IBM1 + Stem    5           0.570042    0.801775    0.355996
+IBM1 + Stem    10          0.596394    0.810651    0.335222
+IBM2 + Stem    10          0.699029    0.875740    0.244570
+```
 
+Train Runtime Comparison - 
+
+```
+Name           Iterations     Time Taken
+IBM Model 1    10             1504 seconds
+IBM Model 2    10             7982 seconds
+
+```
 ### Instructions :
 
 There are 3 python programs here (`-h` for usage):
@@ -26,17 +45,17 @@ There are 3 python programs here (`-h` for usage):
 - `./align` same as ibm2.py but name is different for submission.
 
 The example commands to run ibm1 and ibm2 respectively:
-
+```
    > python ibm1_numpy.py
 
    > python ibm2.py
 
    > python align
-
+```
 To control iterations we have added an option -i. Example for 10 iterations:
-
+```
    > python ibm2.py -i 10
-
+```
 [comment]: <> (The `data` directory contains a fragment of the Canadian Hansards,)
 
 [comment]: <> (aligned by Ulrich Germann:)
